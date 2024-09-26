@@ -16,8 +16,7 @@ var secret_template:Control = secrets_list.get_node(^"Scroll/Box/SecretTemplate"
 
 const addon_path:String = "res://addons/SecretStore"
 
-func get_entries(file_path:String, password:String):
-	# Read encrypted entries
+static func get_entries(file_path:String, password:String):
 	var file := FileAccess.open_encrypted_with_pass(file_path, FileAccess.READ, password)
 	if file == null:
 		return null
