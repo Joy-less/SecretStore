@@ -37,6 +37,14 @@ static func get_entries(file_path:String, password:String):
 > [!IMPORTANT]
 > Ensure your export presets include the secrets file.
 
+## Security Considerations
+
+The plugin uses [FileAccess#open_encrypted_with_pass](https://docs.godotengine.org/en/4.3/classes/class_fileaccess.html#class-fileaccess-method-open-encrypted-with-pass) for encryption, which internally uses AES-256.
+
+Modern computers can attempt many millions of passwords per second for this algorithm.
+
+As such, the password should be a long randomly generated string rather than something memorable.
+
 ## Disclaimer
 
 The author of this repository cannot be held responsible for breeched passwords or secrets.
